@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package DAO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -35,8 +36,8 @@ public class ConnectDB {
         con = DriverManager.getConnection(url, "sa", "123");
         return con;
     }
-    
-  
+
+   
 
     public static void close() {
         try {
@@ -61,10 +62,10 @@ public class ConnectDB {
     public static int executeUpdate(String sql) {
         int i = -1;
         try {
-            
+
             Statement stm = con.createStatement();
             i = stm.executeUpdate(sql);
-        } catch (Exception e) {                        
+        } catch (Exception e) {
         }
         return i;
     }
